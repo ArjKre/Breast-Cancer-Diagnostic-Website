@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Node
+node_modules/
+frontend/dist/
+
+# ML model files
+*.h5
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+
+# Uploaded data
+uploads/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Stray root lockfile (no root package.json)
+package-lock.json
+
+# Reports output
+reports/
