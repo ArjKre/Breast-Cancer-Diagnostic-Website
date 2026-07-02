@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from app.services.predictor import predict as run_prediction
 from fastapi import APIRouter, File, UploadFile
 
 router = APIRouter()
@@ -16,9 +17,6 @@ async def predict(file: UploadFile = File(...)):
     with open(filepath, "wb") as buffer:
         buffer.write(await file.read())
 
-    return {
-        "prediction": "Malignant",
-        "confidence": 0.91,
-        "risk_level": "High",
-        "filename": file.filename,
-    }
+    result = run_prediction(filepath)
+
+    return {"filename": file.filename, **result}
