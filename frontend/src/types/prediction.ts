@@ -1,6 +1,5 @@
 export interface PredictionResponse {
+  filename: string;
   prediction: string;
   confidence: number;
-  risk_level: "High" | "Medium" | "Low";
-  filename: string;
 }

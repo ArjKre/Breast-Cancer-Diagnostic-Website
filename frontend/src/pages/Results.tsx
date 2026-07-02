@@ -2,7 +2,6 @@ import { useLocation } from "react-router-dom";
 
 export default function Results() {
   const location = useLocation();
-
   const data = location.state;
 
   if (!data) {
@@ -13,12 +12,13 @@ export default function Results() {
     );
   }
 
-// const riskLevel =
-//   data.confidence > 0.8
-//     ? "High"
-//     : data.confidence > 0.5
-//     ? "Medium"
-//     : "Low";
+  const isMalignant = data.prediction === "Malignant";
+  const riskLevel =
+    data.confidence > 0.8
+      ? "High"
+      : data.confidence > 0.5
+      ? "Medium"
+      : "Low";
 
   return (
     <div className="p-8 bg-white shadow rounded-xl">
@@ -30,7 +30,9 @@ export default function Results() {
   <div className="space-y-4">
 
     <div>
-      <span className="font-semibold">
+      <span className={
+		  isMalignant ? "text-red-600" : "text-green-600"
+	  }>
         Prediction:
       </span>{" "}
       {data.prediction}
@@ -46,7 +48,7 @@ export default function Results() {
 	  <span className="font-semibold">
 		Risk Level:
 	  </span>{" "}
-	  {data.risk_level}
+	  {riskLevel}
 	</div>
     <div>
       <span className="font-semibold">

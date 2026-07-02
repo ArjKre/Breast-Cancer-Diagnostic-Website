@@ -13,12 +13,9 @@ export default function UploadBox() {
 	  if (!file) return;
 
 	  try{
-		  setLoading(false);
+		  setLoading(true);
 
-		  const formData = new FormData();
-		  formData.append("file",file);
-
-		  const response = predictImage(file);
+		  const response = await predictImage(file);
 
 		  navigate("/results",{
 			  state: response,
@@ -55,7 +52,7 @@ export default function UploadBox() {
 		  />
 		)}
       <button onClick = {handleUpload} className="bg-blue-500 text-white p-2 rounded">
-	  {loading ? "Analyzing.." : "Analyzed Mammogram"}
+	  {loading ? "Analyzing.." : "Analyze Mammogram"}
       </button>
     </div>
   );

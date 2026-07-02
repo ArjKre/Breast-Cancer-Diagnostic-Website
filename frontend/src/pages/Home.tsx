@@ -7,7 +7,7 @@ export default function Home() {
       <div className="max-w-4xl mx-auto p-10">
 
         <h1 className="text-5xl font-bold mb-4">
-          Breast Cancer AI Screening
+          Breast Cancer Screening Using CNN
         </h1>
 
         <p className="text-gray-600 mb-8">
