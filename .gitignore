@@ -27,6 +27,10 @@ frontend/dist/
 *.pth
 *.onnx
 
+#Dataset
+ml/dataset/benign/
+ml/dataset/malignant/
+
 # Uploaded data
 uploads/
 
